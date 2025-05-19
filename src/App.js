@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/viewer/:plyFileName" element={<PlyViewerPage />} />
+        <Route path="/" element={<PlyViewerPage />} />
       </Routes>
     </BrowserRouter>
   );
