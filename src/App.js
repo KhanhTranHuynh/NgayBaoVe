@@ -1,6 +1,6 @@
 // App.js
 import "./App.css";
-import PlyViewerPage from "./page/PlyViewerPage";
+import PlyViewerPage from "./pages/PlyViewerPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
