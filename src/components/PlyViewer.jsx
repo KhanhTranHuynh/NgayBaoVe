@@ -27,18 +27,25 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         rendererRef.current = renderer;
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0x000000, 0);
+        renderer.setClearColor(0x000000, 0); // Set transparent background
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         mountRef.current.appendChild(renderer.domElement);
 
-        const light1 = new THREE.DirectionalLight(0xffffff, 1.5);
-        light1.position.set(5, 5, 5).normalize();
-        scene.add(light1);
-        const light2 = new THREE.DirectionalLight(0xffffff, 1.0);
-        light2.position.set(-5, -5, -5).normalize();
-        scene.add(light2);
-        scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        directionalLight.position.set(5, 5, 5);
+        directionalLight.castShadow = true;
+        directionalLight.shadow.mapSize.width = 1024;
+        directionalLight.shadow.mapSize.height = 1024;
+        directionalLight.shadow.camera.near = 0.5;
+        directionalLight.shadow.camera.far = 50;
+        scene.add(directionalLight);
+
+        const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+        hemisphereLight.position.set(0, 1, 0);
+        scene.add(hemisphereLight);
 
         let controls;
         let distance = 10;
@@ -58,6 +65,11 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
                 textureLoader.load(
                     texturePath,
                     (texture) => {
+                        const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
+                        texture.anisotropy = maxAnisotropy;
+                        texture.minFilter = THREE.LinearMipmapLinearFilter;
+                        texture.magFilter = THREE.LinearFilter;
+
                         if (!geometry.attributes.uv) {
                             const uvs = [];
                             const pos = geometry.attributes.position;
@@ -67,17 +79,23 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
                             geometry.setAttribute('uv', new THREE.BufferAttribute(new Float32Array(uvs), 2));
                         }
 
-                        const material = new THREE.MeshPhongMaterial({
+                        const material = new THREE.MeshStandardMaterial({
                             map: texture,
-                            specular: 0x555555,
-                            shininess: 50,
+                            metalness: 0.3,
+                            roughness: 0.7,
+                            side: THREE.DoubleSide,
+                            transparent: true,
+                            alphaTest: 0.5
                         });
 
                         const mesh = new THREE.Mesh(geometry, material);
                         meshRef.current = mesh;
+                        mesh.castShadow = true;
+                        mesh.receiveShadow = true;
 
                         mesh.position.set(0, 0, 0);
                         mesh.rotation.x = Math.PI;
+                        mesh.scale.set(1, 1, 1);
 
                         modelGroup.add(mesh);
 
@@ -317,7 +335,7 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
             const originalBackground = sceneRef.current.background;
             sceneRef.current.background = texture;
 
-            rendererRef.current.setClearColor(0x000000, 1);
+            rendererRef.current.setClearColor(0x000000, 0); // Ensure transparency for snapshot
 
             rendererRef.current.render(sceneRef.current, cameraRef.current);
 
@@ -329,7 +347,7 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
             link.click();
 
             sceneRef.current.background = originalBackground;
-            rendererRef.current.setClearColor(0x000000, 0);
+            rendererRef.current.setClearColor(0x000000, 0); // Restore transparent background
 
             if (gridHelperRef.current) gridHelperRef.current.visible = true;
             if (axesHelperRef.current) axesHelperRef.current.visible = true;
