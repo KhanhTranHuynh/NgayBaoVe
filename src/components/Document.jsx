@@ -11,6 +11,7 @@ const Doc = () => {
 
     // List of JPG files (relative paths from the public folder)
     const slides = [
+        '/images/bia.jpg',
         '/images/slide1.jpg',
         '/images/slide2.jpg',
         '/images/slide3.jpg',
