@@ -118,10 +118,9 @@ const Doc = () => {
                                         style={{
                                             borderRadius: '8px',
                                             height: '40px',
-                                            minWidth: '120px'
+                                            minWidth: '60px'
                                         }}
                                     >
-                                        Trang trước
                                     </Button>
                                 </Col>
 
@@ -150,10 +149,9 @@ const Doc = () => {
                                         style={{
                                             borderRadius: '8px',
                                             height: '40px',
-                                            minWidth: '120px'
+                                            minWidth: '60px'
                                         }}
                                     >
-                                        Trang sau
                                     </Button>
                                 </Col>
                             </Row>
