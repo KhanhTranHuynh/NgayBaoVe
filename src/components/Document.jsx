@@ -11,13 +11,12 @@ const Doc = () => {
 
     // List of JPG files (relative paths from the public folder)
     const slides = [
-        '/images/bia.jpg',
-        '/images/slide1.jpg',
-        '/images/slide2.jpg',
-        '/images/slide3.jpg',
-        '/images/slide4.jpg',
-        '/images/slide5.jpg',
-        '/images/slide6.jpg',
+        '/powerpoint/slide1.jpg',
+        '/powerpoint/slide2.jpg',
+        '/powerpoint/slide3.jpg',
+        '/powerpoint/slide4.jpg',
+        '/powerpoint/slide5.jpg',
+        '/powerpoint/slide6.jpg',
     ];
 
     // Handle previous slide
