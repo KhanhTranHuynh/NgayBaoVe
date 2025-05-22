@@ -11,12 +11,12 @@ const Doc = () => {
 
     // List of JPG files (relative paths from the public folder)
     const slides = [
-        '/powerpoint/slide1.jpg',
-        '/powerpoint/slide2.jpg',
-        '/powerpoint/slide3.jpg',
-        '/powerpoint/slide4.jpg',
-        '/powerpoint/slide5.jpg',
-        '/powerpoint/slide6.jpg',
+        '/images/Slide1.jpg',
+        '/images/Slide2.jpg',
+        '/images/Slide3.jpg',
+        '/images/Slide4.jpg',
+        '/images/Slide5.jpg',
+        '/images/Slide6.jpg',
     ];
 
     // Handle previous slide
@@ -58,7 +58,6 @@ const Doc = () => {
                 </Title>
 
                 <Row gutter={[32, 32]} justify="center" align="top">
-                    {/* Carousel Section */}
                     <Col xs={24} lg={14}>
                         <Card
                             style={{
