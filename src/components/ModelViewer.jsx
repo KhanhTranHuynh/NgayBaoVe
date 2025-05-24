@@ -52,10 +52,10 @@ const Banner = ({ nameitem }) => {
                     position: 'relative',
                 }}
             >
-                {/* <ModelFirst
+                <ModelFirst
                     plyPath={`/plys/${nameitem}.ply`}
                     texturePath={`/png/${nameitem}0.png`}
-                /> */}
+                />
                 <div
                     style={{
                         position: 'absolute',
