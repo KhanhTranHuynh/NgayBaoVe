@@ -9,7 +9,6 @@ const Doc = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const carouselRef = useRef(null);
 
-    // List of JPG files (relative paths from the public folder)
     const slides = [
         '/powerpoint/slide1.jpg',
         '/powerpoint/slide2.jpg',
