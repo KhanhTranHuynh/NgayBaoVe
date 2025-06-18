@@ -4,6 +4,7 @@ import theme from '../settings/theme';
 import ModelFirst from './ModelFirst';
 import { ArrowsAltOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import TypewriterText from './TypewriterText';
 
 const { Content } = Layout;
 
@@ -81,6 +82,25 @@ const Banner = ({ nameitem }) => {
                     <ArrowsAltOutlined />
                 </div>
             </div>
+            <div
+                style={{
+                    color: 'white',
+                    textAlign: 'center',
+                    zIndex: 2,
+                }}
+            >
+                <div
+                    style={{
+                        fontSize: '22px',
+                        fontWeight: 600,
+                        textShadow: '1px 1px 4px rgba(0, 0, 0, 0.6)',
+                    }}
+                >
+                    Hệ thống xây dựng tự động mô hình vật thể 3D từ video sử dụng trí tuệ nhân tạo
+                </div>
+                <TypewriterText text="Huỳnh Khánh Trân" speed={120} pause={100} />
+            </div>
+
         </Content>
     );
 };
