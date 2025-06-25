@@ -87,6 +87,7 @@ const Banner = ({ nameitem }) => {
                     color: 'white',
                     textAlign: 'center',
                     zIndex: 2,
+                    margin: '20px',
                 }}
             >
                 <div

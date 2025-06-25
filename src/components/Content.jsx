@@ -43,14 +43,57 @@ const ModelViewer = () => {
                 background: 'white',
                 borderRadius: '6px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-                zIndex: 1,
+                zIndex: 10,
                 position: 'relative',
                 top: '-150px',
             }}
         >
             <Row gutter={[24, 24]} justify="center">
+
                 <Col xs={24} md={8}>
                     <div style={cardStyle}>
+                        <video
+                            src="/videos/dilap.mp4"
+                            style={{
+                                width: '100%',
+                                height: '207.68px',
+                                borderRadius: '6px',
+                                objectFit: 'cover',
+                            }}
+                            controls
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <div style={textStyle}>
+                            Video được quay bằng điện thoại di động
+                        </div>
+                        <button style={buttonBlue}>XEM THÊM</button>
+                    </div>
+                </Col>
+
+                {isMobile ? <hr /> : <></>}
+                <Col xs={24} md={8}>
+                    <div style={cardStyle}>
+                        <video
+                            src="/videos/quaTrinh.mp4"
+                            style={{ width: '100%', borderRadius: '6px' }}
+                            controls
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <div style={textStyle}>
+                            Quá trình tạo mô hình từ hệ thống ứng dụng người dùng
+                        </div>
+                        <button style={buttonPink}>XEM THÊM</button>
+                    </div>
+                </Col>
+                {isMobile ? <hr /> : <></>}
+                <Col xs={24} md={8}>
+                    <div style={cardStyle} >
                         <video
                             src="/videos/in3D.mp4"
                             style={{ width: '100%', borderRadius: '6px' }}
@@ -61,45 +104,9 @@ const ModelViewer = () => {
                             playsInline
                         />
                         <div style={textStyle}>
-                            Quá trình in mô hình 3D từ dữ liệu số đã được tái tạo
+                            Quá trình in mô hình 3D từ sản mô hình đã tạo
                         </div>
-                        <button style={buttonBlue}>JOIN SKETCHFAB</button>
-                    </div>
-                </Col>
-                {isMobile ? <hr /> : <></>}
-                <Col xs={24} md={8}>
-                    <div style={cardStyle} >
-                        <video
-                            src="/videos/quaTrinh.mp4"
-                            style={{ width: '100%', borderRadius: '6px' }}
-                            controls
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                        />
-                        <div style={textStyle}>
-                            Buy & sell 3D models<br />on Fab
-                        </div>
-                        <button style={buttonPink}>BUY 3D MODELS ON FAB</button>
-                    </div>
-                </Col>
-                {isMobile ? <hr /> : <></>}
-                <Col xs={24} md={8}>
-                    <div style={cardStyle}>
-                        <video
-                            src="/videos/quaTrinh.mp4"
-                            style={{ width: '100%', borderRadius: '6px' }}
-                            controls
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                        />
-                        <div style={textStyle}>
-                            Join millions of 3D creators and showcase your work
-                        </div>
-                        <button style={buttonBlue}>JOIN SKETCHFAB</button>
+                        <button style={buttonBlue}>XEM THÊM</button>
                     </div>
                 </Col>
             </Row>

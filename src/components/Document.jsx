@@ -10,12 +10,36 @@ const Doc = () => {
     const carouselRef = useRef(null);
 
     const slides = [
-        '/powerpoint/slide1.jpg',
-        '/powerpoint/slide2.jpg',
-        '/powerpoint/slide3.jpg',
-        '/powerpoint/slide4.jpg',
-        '/powerpoint/slide5.jpg',
-        '/powerpoint/slide6.jpg',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-01.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-02.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-03.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-04.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-05.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-06.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-07.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-08.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-09.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-10.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-11.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-12.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-13.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-14.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-15.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-16.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-17.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-18.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-19.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-20.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-21.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-22.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-23.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-24.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-25.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-26.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-27.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-28.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-29.png',
+        '/powerpoint/HuynhKhanhTran_KLTN_done-30.png',
     ];
 
     // Handle previous slide
@@ -53,7 +77,7 @@ const Doc = () => {
                         textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                     }}
                 >
-                    Tài Liệu Học Tập
+                    Tài Liệu
                 </Title>
 
                 <Row gutter={[32, 32]} justify="center" align="top">
@@ -170,7 +194,7 @@ const Doc = () => {
                             <Space direction="vertical" size="large" style={{ width: '100%' }}>
                                 <div style={{ textAlign: 'center' }}>
                                     <Title level={3} style={{ marginBottom: '0', color: '#1f2937' }}>
-                                        Giáo Trình Chuyên Ngành
+                                        Báo Cáo Khóa Luận Tốt Nghiệp
                                     </Title>
                                 </div>
 
@@ -179,13 +203,12 @@ const Doc = () => {
                                     <Col xs={10} sm={10}>
                                         <div style={{ textAlign: 'center' }}>
                                             <img
-                                                src="/images/bia.jpg"
+                                                src="/images/bia.png"
                                                 alt="Bìa tài liệu"
                                                 style={{
                                                     width: '100%',
-                                                    maxWidth: '180px',
-                                                    height: '220px',
-                                                    objectFit: 'cover',
+                                                    height: 'auto', // Tự động giữ tỷ lệ
+                                                    objectFit: 'contain',
                                                     borderRadius: '12px',
                                                     boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                                                     border: '3px solid #f0f0f0'
@@ -198,27 +221,25 @@ const Doc = () => {
                                     <Col xs={14} sm={14}>
                                         <Space direction="vertical" size="middle" style={{ width: '100%' }}>
                                             <div>
-                                                <Paragraph style={{ fontSize: '14px', lineHeight: '1.5', color: '#6b7280', marginBottom: '16px' }}>
-                                                    Tài liệu học tập chất lượng cao được biên soạn bởi đội ngũ giảng viên
-                                                    giàu kinh nghiệm.
+                                                <Paragraph style={{ fontWeight: "600", fontSize: '14px', lineHeight: '1.5', color: '#6b7280', marginBottom: '16px' }}>
+                                                    HỆ THỐNG XÂY DỰNG TỰ ĐỘNG VẬT THỂ 3D TỪ VIDEO SỬ DỤNG TRÍ TUỆ NHÂN TẠO
                                                 </Paragraph>
-
                                                 <Space direction="vertical" size="small" style={{ width: '100%' }}>
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <Text strong style={{ color: '#374151', minWidth: '80px', fontSize: '13px' }}>📚 Môn học:</Text>
+                                                        <Text strong style={{ color: '#374151', minWidth: '60px', fontSize: '13px' }}>📚 Khoa:</Text>
                                                         <Text style={{ color: '#6b7280', fontSize: '13px' }}>Công nghệ thông tin</Text>
                                                     </div>
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <Text strong style={{ color: '#374151', minWidth: '80px', fontSize: '13px' }}>📅 Năm học:</Text>
+                                                        <Text strong style={{ color: '#374151', minWidth: '85px', fontSize: '13px' }}>📅 Năm học:</Text>
                                                         <Text style={{ color: '#6b7280', fontSize: '13px' }}>2024-2025</Text>
                                                     </div>
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <Text strong style={{ color: '#374151', minWidth: '80px', fontSize: '13px' }}>👨‍🏫 Giảng viên:</Text>
-                                                        <Text style={{ color: '#6b7280', fontSize: '13px' }}>TS. Nguyễn Văn A</Text>
+                                                        <Text strong style={{ color: '#374151', minWidth: '85px', fontSize: '13px' }}>👨‍🏫 Giảng viên hướng dẫn:</Text>
+                                                        <Text style={{ color: '#6b7280', fontSize: '13px' }}> TS. Ngô Hồ Anh Khôi</Text>
                                                     </div>
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <Text strong style={{ color: '#374151', minWidth: '80px', fontSize: '13px' }}>📄 Trang:</Text>
-                                                        <Text style={{ color: '#6b7280', fontSize: '13px' }}>156 trang</Text>
+                                                        <Text strong style={{ color: '#374151', minWidth: '65px', fontSize: '13px' }}>👨‍🏫 Sinh viên thực hiện:</Text>
+                                                        <Text style={{ color: '#6b7280', fontSize: '13px' }}> Huỳnh Khánh Trân</Text>
                                                     </div>
                                                 </Space>
                                             </div>
