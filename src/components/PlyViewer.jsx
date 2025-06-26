@@ -395,7 +395,7 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
             )}
             {!vrEnabled && showUI && (
                 <>
-                    <button
+                    {/* <button
                         onClick={enableDeviceOrientation}
                         disabled={isLoading}
                         style={{
@@ -413,7 +413,7 @@ const PlyViewer = ({ plyPath, texturePath, autoCenter = true, invertRotation = f
                         }}
                     >
                         {isLoading ? 'Loading...' : 'Enable VR Mode'}
-                    </button>
+                    </button> */}
                     <button
                         onClick={resetPosition}
                         style={{
