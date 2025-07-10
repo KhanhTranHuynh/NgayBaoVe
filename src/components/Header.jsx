@@ -81,7 +81,7 @@ const MyHeader = ({ scrollToHome, scrollToProcess, scrollToDocuments }) => {
                         transition: 'color 0.3s ease',
                     }}
                 >
-                    HK.TRAN
+                    VIT3D
                 </div>
                 {/* Menu cho PC và Mobile */}
                 {!isMobile ? (
